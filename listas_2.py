@@ -25,3 +25,6 @@ while not salir:
         print (f"el elemento {nuevo_elemento} fue agregado a la lista")
     else:
          print("Opcion no valida")
+
+#salir es booleano
+#las listas se declaran con: [] (corchetes)
