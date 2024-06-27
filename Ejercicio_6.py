@@ -13,3 +13,4 @@ numero2 = str(input("ingrese otro numero"))
 resultado = numero1 + numero2
 
 print("el resultado de la suma es: " + str (resultado) )
+
