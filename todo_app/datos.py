@@ -1,5 +1,4 @@
 from uuid import uuid4
-from datos import crear_tarea
 
 _tareas = []
 

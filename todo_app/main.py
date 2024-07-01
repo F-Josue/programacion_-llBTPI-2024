@@ -5,22 +5,29 @@ import json
 salir = True
 
 
-with open('test.json') as f:
-    texto = f.read()
-    print(texto)
+#with open('test.json') as testfile:
+#   texto = testfile.read
+#   print(texto)
+#
+#   data = json.loads(texto)
+#print(data)
+#print(data['usuarios'][0]['ud'])
 
-    data = json.loads(texto)
-    print(data)
-    print(data['usuarios'][0]['id'])
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+test_data = {
+    'texto': 'Hola Mundo',
+    'estado': True,
+    'valor': 3.1
+}
+
+print(test_data)
+
+json_text = json.dumps(test_data)
+print (json_text)
+
+with open('datos.json', 'w') as datos_file:
+    datos_file.write(json_text)
+    datos_file.close()
     
     
     
