@@ -1,6 +1,6 @@
 
 def imprimir_menu():
-    print('xX_Ariel_Camacho_xX')
+    print('Xx_Ariel_Camacho_xX')
     print('1. Ver todas las tareas')
     print('2. Ver tareas pendientes')
     print('3. Ver tareas completadas')

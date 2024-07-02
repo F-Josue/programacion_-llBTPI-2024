@@ -1,33 +1,33 @@
 from menu import imprimir_menu
 from datos import crear_tarea, obtener_todas_las_tareas
-import json
+# import json
 
-salir = True
+salir = False
 
 
-#with open('test.json') as testfile:
+# with open('test.json') as testfile:
 #   texto = testfile.read
 #   print(texto)
-#
+
 #   data = json.loads(texto)
-#print(data)
-#print(data['usuarios'][0]['ud'])
+# print(data)
+# print(data['usuarios'][0]['ud'])
 
 
-test_data = {
-    'texto': 'Hola Mundo',
-    'estado': True,
-    'valor': 3.1
-}
+# test_data = {
+#     'texto': 'Hola Mundo',
+#     'estado': True,
+#     'valor': 3.1
+# }
 
-print(test_data)
+# print(test_data)
 
-json_text = json.dumps(test_data)
-print (json_text)
+# json_text = json.dumps(test_data)
+# print (json_text)
 
-with open('datos.json', 'w') as datos_file:
-    datos_file.write(json_text)
-    datos_file.close()
+# with open('datos.json', 'r') as datos_file:
+#     datos_file.write(json_text)
+#     datos_file.close()
     
     
     
