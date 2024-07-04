@@ -1,6 +1,9 @@
 from uuid import uuid4
-from file_manager import obtener_datos
-_tareas = []
+from file_manager import obtener_datos, sincronizar_todos
+
+datos_guardados = obtener_datos()
+
+_tareas = datos_guardados['todos']
 
 def crear_tarea(titulo: str):
     nueva_tarea = {
@@ -10,6 +13,8 @@ def crear_tarea(titulo: str):
     }
     
     _tareas.append(nueva_tarea)
+    
+    sincronizar_todos
     
 def obtener_todas_las_tareas():
     return _tareas 
