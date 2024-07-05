@@ -53,6 +53,19 @@ while not salir:
         crear_tarea(titulo_tarea)
         print('\n¡Tarea Agregada!\n\n')
     elif resp == '5':
-        pass
+        print('\n-----Eliminar tarea ------')
+        tareas = obtener_todas_las_tareas()
+        for tarea in tareas:
+            index = tareas.index(tarea)
+            print(f'{index + 1}. {tarea['titulo']}')
+            
+        del_opt = input("Ingrese el numero de la tarea que desea eliminar: ")
+            
+        del_index = int(del_opt) - 1
+        
+        del_tarea = tareas[del_index]
+        
+        print(del_tarea)
+        
     else:
         print(f'la opcion "{resp}" no es valida.')
