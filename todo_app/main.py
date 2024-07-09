@@ -1,5 +1,5 @@
 from menu import imprimir_menu
-from datos import crear_tarea, obtener_todas_las_tareas
+from datos import crear_tarea, obtener_todas_las_tareas, eliminar_tarea, obtener_tareas_pendientes, obtener_tareas_completadas
 # import json
 
 salir = False
@@ -38,7 +38,7 @@ while not salir:
     if resp == '0':
         salir = True
     elif resp == '1':
-        print('\n-----Todas las tareas------')
+        print('\n-----Todas las tareas ------')
         tareas = obtener_todas_las_tareas()
         for tarea in tareas:
             index = tareas.index(tarea)
@@ -47,11 +47,17 @@ while not salir:
     elif resp == '2':
         pass
     elif resp == '3':
-        pass
+        print('\n-----Tareas Completadas ------')
+        tareas = obtener_tareas_completadas()
+        for tarea in tareas:
+            index = tareas.index(tarea)
+            print(f'{index + 1}. {tarea['titulo']}')
+            
     elif resp == '4':
         titulo_tarea = input('Ingrese la nueva tarea: ')
         crear_tarea(titulo_tarea)
         print('\n¡Tarea Agregada!\n\n')
+        
     elif resp == '5':
         print('\n-----Eliminar tarea ------')
         tareas = obtener_todas_las_tareas()
@@ -65,7 +71,25 @@ while not salir:
         
         del_tarea = tareas[del_index]
         
-        print(del_tarea)
+        eliminar_tarea(del_tarea)
         
+        print('\n¡Tarea Eliminada!\n\n')
+        
+    elif resp == '6':
+        print('\n----- Completar tarea ------')
+        tareas = obtener_todas_las_tareas()
+        for tarea in tareas:
+            index = tareas.index(tarea)
+            print(f'{index + 1}. {tarea['titulo']}')
+            
+            comp_opt = input("Ingrese el numero de la tarea que desea eliminar: ")
+            
+        comp_index = int(comp_opt) - 1
+        
+        comp_tarea = tareas[comp_index]
+        
+        eliminar_tarea(del_tarea)
+        
+        print(comp_tarea)
     else:
         print(f'la opcion "{resp}" no es valida.')

@@ -16,5 +16,31 @@ def crear_tarea(titulo: str):
     
     sincronizar_todos(_tareas)
     
+    
 def obtener_todas_las_tareas():
     return _tareas 
+
+
+def obtener_todas_las_tareas():
+    tareas_completadas = []
+    
+    for tarea in _tareas:
+        if tarea['completada']:
+            tareas_completadas.append(tarea)
+            
+    return tareas_completadas
+
+
+def obtener_todas_las_tareas():
+    tareas_pendientes = []
+    
+    for tarea in _tareas:
+        if tarea['completada']:
+            tareas_pendientes.append(tarea)
+            
+    return tareas_pendientes
+
+def eliminar_tarea(tarea: dict):
+    _tareas.remove(tarea)
+    
+    sincronizar_todos(_tareas)
